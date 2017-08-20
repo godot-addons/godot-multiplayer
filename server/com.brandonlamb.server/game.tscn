@@ -1,0 +1,220 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://com.brandonlamb.server/lobby.gd" type="Script" id=1]
+[ext_resource path="res://com.brandonlamb.server/ui.gd" type="Script" id=2]
+[ext_resource path="res://com.brandonlamb.server/white.png" type="Texture" id=3]
+[ext_resource path="res://com.brandonlamb.server/world.gd" type="Script" id=4]
+
+[node name="game" type="Node"]
+
+[node name="gamestate" type="Node" parent="."]
+
+[node name="lobby" type="Node" parent="."]
+
+script = ExtResource( 1 )
+
+[node name="ui" type="Control" parent="lobby"]
+
+margin_right = 640.0
+margin_bottom = 480.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+size_flags_horizontal = 0
+size_flags_vertical = 0
+script = ExtResource( 2 )
+_sections_unfolded = [ "Anchor", "Grow Direction", "Rect", "Size Flags", "Visibility" ]
+
+[node name="background" type="TextureRect" parent="lobby/ui"]
+
+modulate = Color( 0.258824, 0.258824, 0.258824, 1 )
+margin_right = 640.0
+margin_bottom = 480.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 1
+size_flags_horizontal = 1
+size_flags_vertical = 1
+texture = ExtResource( 3 )
+expand = true
+stretch_mode = 0
+_sections_unfolded = [ "Anchor", "Focus", "Grow Direction", "Hint", "Mouse", "Rect", "Size Flags", "Theme", "Visibility" ]
+
+[node name="ip_address" type="LineEdit" parent="lobby/ui"]
+
+margin_left = 20.0
+margin_top = 40.0
+margin_right = 210.0
+margin_bottom = 70.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+text = "0.0.0.0"
+expand_to_len = false
+focus_mode = 2
+placeholder_text = "IPv4 Address"
+placeholder_alpha = 0.6
+caret_blink = false
+caret_blink_speed = 0.65
+_sections_unfolded = [ "Anchor", "Placeholder", "Rect", "Size Flags" ]
+
+[node name="label" type="Label" parent="lobby/ui/ip_address"]
+
+margin_top = -17.0
+margin_right = 190.0
+margin_bottom = -3.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+size_flags_horizontal = 1
+size_flags_vertical = 4
+text = "IP Address"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Anchor" ]
+
+[node name="port" type="LineEdit" parent="lobby/ui"]
+
+margin_left = 20.0
+margin_top = 100.0
+margin_right = 78.0
+margin_bottom = 130.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+text = "6969"
+expand_to_len = false
+focus_mode = 2
+placeholder_text = "Port"
+placeholder_alpha = 0.6
+caret_blink = false
+caret_blink_speed = 0.65
+_sections_unfolded = [ "Anchor", "Placeholder", "Rect", "Size Flags" ]
+
+[node name="label" type="Label" parent="lobby/ui/port"]
+
+margin_top = -17.0
+margin_right = 190.0
+margin_bottom = -3.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+size_flags_horizontal = 1
+size_flags_vertical = 4
+text = "Port"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Anchor" ]
+
+[node name="max_players" type="SpinBox" parent="lobby/ui"]
+
+margin_left = 130.0
+margin_top = 100.0
+margin_right = 210.0
+margin_bottom = 130.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+min_value = 1.0
+max_value = 32.0
+step = 1.0
+page = 0.0
+value = 16.0
+exp_edit = false
+rounded = false
+editable = true
+prefix = ""
+suffix = ""
+_sections_unfolded = [ "Anchor", "Placeholder", "Rect", "Size Flags" ]
+
+[node name="label" type="Label" parent="lobby/ui/max_players"]
+
+margin_top = -17.0
+margin_right = 80.0
+margin_bottom = -3.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+size_flags_horizontal = 1
+size_flags_vertical = 4
+text = "Max Players"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="start_server" type="Button" parent="lobby/ui"]
+
+margin_left = 20.0
+margin_top = 140.0
+margin_right = 110.0
+margin_bottom = 160.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+text = "Start Server"
+flat = false
+_sections_unfolded = [ "Anchor", "Rect", "Size Flags" ]
+
+[node name="stop_server" type="Button" parent="lobby/ui"]
+
+margin_left = 120.0
+margin_top = 140.0
+margin_right = 210.0
+margin_bottom = 160.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+disabled = true
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+text = "Stop Server"
+flat = false
+_sections_unfolded = [ "Rect", "Size Flags" ]
+
+[node name="messages" type="RichTextLabel" parent="lobby/ui"]
+
+margin_left = 220.0
+margin_top = 40.0
+margin_right = 620.0
+margin_bottom = 460.0
+rect_pivot_offset = Vector2( 0, 0 )
+mouse_filter = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+bbcode_enabled = true
+bbcode_text = ""
+visible_characters = -1
+percent_visible = 1.0
+_sections_unfolded = [ "BBCode" ]
+
+[node name="world" type="Node" parent="."]
+
+script = ExtResource( 4 )
+
+[node name="players" type="Node" parent="world"]
+
+[node name="zones" type="Node" parent="world"]
+
+[connection signal="pressed" from="lobby/ui/start_server" to="lobby/ui" method="_on_start_server_pressed"]
+
+[connection signal="pressed" from="lobby/ui/stop_server" to="lobby/ui" method="_on_stop_server_pressed"]
+
+

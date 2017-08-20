@@ -1,0 +1,16 @@
+config_version=3
+
+[application]
+
+config/name="godot-multiplayer-client"
+run/main_scene="res://com.brandonlamb.client/game.tscn"
+config/icon="res://icon.png"
+
+[display]
+
+window/size/width=640
+window/size/height=480
+
+[rendering]
+
+environment/default_environment="res://default_env.tres"
