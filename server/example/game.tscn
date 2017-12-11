@@ -1,9 +1,9 @@
 [gd_scene load_steps=5 format=2]
 
-[ext_resource path="res://com.brandonlamb.server/lobby.gd" type="Script" id=1]
-[ext_resource path="res://com.brandonlamb.server/ui.gd" type="Script" id=2]
-[ext_resource path="res://com.brandonlamb.server/white.png" type="Texture" id=3]
-[ext_resource path="res://com.brandonlamb.server/world.gd" type="Script" id=4]
+[ext_resource path="res://example/lobby.gd" type="Script" id=1]
+[ext_resource path="res://example/ui.gd" type="Script" id=2]
+[ext_resource path="res://example/white.png" type="Texture" id=3]
+[ext_resource path="res://example/world.gd" type="Script" id=4]
 
 [node name="game" type="Node"]
 
@@ -15,6 +15,10 @@ script = ExtResource( 1 )
 
 [node name="ui" type="Control" parent="lobby"]
 
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
 margin_right = 640.0
 margin_bottom = 480.0
 rect_pivot_offset = Vector2( 0, 0 )
@@ -28,6 +32,10 @@ _sections_unfolded = [ "Anchor", "Grow Direction", "Rect", "Size Flags", "Visibi
 [node name="background" type="TextureRect" parent="lobby/ui"]
 
 modulate = Color( 0.258824, 0.258824, 0.258824, 1 )
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
 margin_right = 640.0
 margin_bottom = 480.0
 rect_pivot_offset = Vector2( 0, 0 )
@@ -42,6 +50,10 @@ _sections_unfolded = [ "Anchor", "Focus", "Grow Direction", "Hint", "Mouse", "Re
 
 [node name="ip_address" type="LineEdit" parent="lobby/ui"]
 
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
 margin_left = 20.0
 margin_top = 40.0
 margin_right = 210.0
@@ -52,16 +64,20 @@ mouse_filter = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
 text = "0.0.0.0"
-expand_to_len = false
 focus_mode = 2
 placeholder_text = "IPv4 Address"
 placeholder_alpha = 0.6
 caret_blink = false
 caret_blink_speed = 0.65
+context_menu_enabled = true
 _sections_unfolded = [ "Anchor", "Placeholder", "Rect", "Size Flags" ]
 
 [node name="label" type="Label" parent="lobby/ui/ip_address"]
 
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
 margin_top = -17.0
 margin_right = 190.0
 margin_bottom = -3.0
@@ -78,6 +94,10 @@ _sections_unfolded = [ "Anchor" ]
 
 [node name="port" type="LineEdit" parent="lobby/ui"]
 
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
 margin_left = 20.0
 margin_top = 100.0
 margin_right = 78.0
@@ -88,16 +108,20 @@ mouse_filter = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
 text = "6969"
-expand_to_len = false
 focus_mode = 2
 placeholder_text = "Port"
 placeholder_alpha = 0.6
 caret_blink = false
 caret_blink_speed = 0.65
+context_menu_enabled = true
 _sections_unfolded = [ "Anchor", "Placeholder", "Rect", "Size Flags" ]
 
 [node name="label" type="Label" parent="lobby/ui/port"]
 
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
 margin_top = -17.0
 margin_right = 190.0
 margin_bottom = -3.0
@@ -114,6 +138,10 @@ _sections_unfolded = [ "Anchor" ]
 
 [node name="max_players" type="SpinBox" parent="lobby/ui"]
 
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
 margin_left = 130.0
 margin_top = 100.0
 margin_right = 210.0
@@ -137,6 +165,10 @@ _sections_unfolded = [ "Anchor", "Placeholder", "Rect", "Size Flags" ]
 
 [node name="label" type="Label" parent="lobby/ui/max_players"]
 
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
 margin_top = -17.0
 margin_right = 80.0
 margin_bottom = -3.0
@@ -152,6 +184,10 @@ max_lines_visible = -1
 
 [node name="start_server" type="Button" parent="lobby/ui"]
 
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
 margin_left = 20.0
 margin_top = 140.0
 margin_right = 110.0
@@ -171,6 +207,10 @@ _sections_unfolded = [ "Anchor", "Rect", "Size Flags" ]
 
 [node name="stop_server" type="Button" parent="lobby/ui"]
 
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
 margin_left = 120.0
 margin_top = 140.0
 margin_right = 210.0
@@ -191,6 +231,10 @@ _sections_unfolded = [ "Rect", "Size Flags" ]
 
 [node name="messages" type="RichTextLabel" parent="lobby/ui"]
 
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
 margin_left = 220.0
 margin_top = 40.0
 margin_right = 620.0
@@ -203,6 +247,7 @@ bbcode_enabled = true
 bbcode_text = ""
 visible_characters = -1
 percent_visible = 1.0
+override_selected_font_color = false
 _sections_unfolded = [ "BBCode" ]
 
 [node name="world" type="Node" parent="."]
