@@ -155,7 +155,8 @@ master func player_ready(id):
 				continue
 
 			var pos = i.get_global_transform().origin
-			rpc_id(id, "spawn_player", pid, server.peers[pid], pos)
+			if server.peers.has(pid):
+				rpc_id(id, "spawn_player", pid, server.peers[pid], pos)
 
 	var spawn_pos = Vector2(0, 0)
 	rpc("spawn_player", id, server.peers[id], spawn_pos)
